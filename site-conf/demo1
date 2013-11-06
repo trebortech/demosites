@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+	ServerAdmin webadmin@site.com
+	ServerName rrgeeks.org
+	ServerAlias demo1.rrgeeks.org
+	DocumentRoot /demo/websites/demo1
+	<Directory /demo/websites/demo1/>
+		Options MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/demo1-error.log
+
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/demo1-access.log combined
+</VirtualHost>
